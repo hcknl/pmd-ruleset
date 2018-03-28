@@ -1,0 +1,32 @@
+apply plugin: 'pmd'
+
+pmd {
+    toolVersion = '6.2.0'
+}
+
+def pmdConfigFile = "$project.projectDir/quality_tools/pmd-rules.xml"
+
+def htmlEnabled = true
+def xmlEnabled = false
+
+String createOutputFile(String fileName) {
+    return new File("$project.buildDir/outputs/quality_reports/" + fileName)
+}
+
+task pmd(type: Pmd) {
+    ruleSetFiles = files(pmdConfigFile)
+    ruleSets = []
+    source = fileTree('src/main/java/')
+
+    exclude '**/gen/**'
+    ignoreFailures = false
+
+    reports {
+        xml.enabled = xmlEnabled
+        html.enabled = htmlEnabled
+        html.destination = createOutputFile("pmd.html")
+        xml.destination = createOutputFile("pmd.xml")
+    }
+}
+
+// run this task by calling ./gradlew pmd
