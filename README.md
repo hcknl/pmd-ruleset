@@ -1,7 +1,7 @@
 # pmd-ruleset
 PMD Static Code Analyzer Ruleset and sample usage
 
-Create a folder inside app like sample file tree shown below;
+Create a folder inside app directory, sample file tree shown below;
 
 app/quality_tools
 
