@@ -1,0 +1,3 @@
+// inside the app level build.gradlem add this line as applying plugins
+
+apply from: "$project.projectDir/quality_tools/quality_tools.gradle"
