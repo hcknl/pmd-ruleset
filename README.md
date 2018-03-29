@@ -5,7 +5,7 @@ Create a folder inside app directory, sample file tree shown below;
 
 app/quality_tools
 
-quality_tools.gradle
+quality_tools.gradle and
 pmd-rules.xml
 
 Run it via android studio terminal by calling ./gradlew pmd (mac os)
